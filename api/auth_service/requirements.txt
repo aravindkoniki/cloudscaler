@@ -1,0 +1,7 @@
+flask
+flasgger
+flask-sqlalchemy
+passlib
+pyjwt
+python-dotenv
+pymysql
