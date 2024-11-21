@@ -10,12 +10,12 @@ def create_app():
     app.config.from_object(Config)
 
     db.init_app(app)
-    Swagger(app)  # Enable Swagger
+    Swagger(app)  # Enable Swagger for API documentation
 
     # Register Blueprints
     from app.api.auth import auth_bp
     app.register_blueprint(auth_bp, url_prefix="/auth")
 
     with app.app_context():
-        db.create_all()  # Initialize database
+        db.create_all()  # Initialize the database
     return app
