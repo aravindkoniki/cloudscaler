@@ -1,10 +1,10 @@
-FROM python:3.10-slim
+FROM python:3.9
 
 WORKDIR /app
 
 COPY requirements.txt .
-RUN apt-get update && apt-get install -y gcc libmariadb-dev && pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["flask", "run", "--host=0.0.0.0", "--port=8000"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "wsgi:app"]

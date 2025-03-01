@@ -1,7 +1,7 @@
-Flask==2.3.2
-Flask-SQLAlchemy==3.0.5
-Flask-Swagger==0.2.14
-PyJWT==2.8.0
-passlib==1.7.4
-pymysql==1.1.0
-python-dotenv==1.0.0
+Flask
+Flask-SQLAlchemy
+Flask-JWT-Extended
+Flasgger
+PyMySQL
+gunicorn
+python-dotenv

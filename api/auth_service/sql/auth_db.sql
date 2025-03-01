@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS auth_db;
+USE auth_db;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(80) UNIQUE NOT NULL,
+    email VARCHAR(120) UNIQUE NOT NULL,
+    password_hash VARCHAR(256) NOT NULL
+);
