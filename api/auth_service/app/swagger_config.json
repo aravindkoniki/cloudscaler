@@ -1,0 +1,24 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Auth Service API",
+        "description": "API documentation for Authentication Service",
+        "version": "1.0.0"
+    },
+    "host": "localhost:5001",
+    "schemes": ["http"],
+    "paths": {
+        "/auth/register": {
+            "post": {
+                "summary": "Register User",
+                "tags": ["Authentication"]
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "summary": "User Login",
+                "tags": ["Authentication"]
+            }
+        }
+    }
+}

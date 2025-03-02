@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  auth-service:
+    build: ./auth_service
+    ports:
+      - "5001:5000"
+    depends_on:
+      - auth-db
+    env_file:
+      - ./auth_service/.env
+
+  auth-db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: auth_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./auth_service/sql/auth_db.sql:/docker-entrypoint-initdb.d/auth_db.sql
